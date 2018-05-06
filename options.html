@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="description" content="" />
+    
+    <link href="styles.css" rel="stylesheet">
+	<style> 
+		body {
+			font-family:'Open Sans', serif;
+			background-color:#F7F7F7;
+			
+		}
+		.container {
+			background-color:#fff;
+			margin:1em auto;
+			max-width:300px;
+		}
+		
+		.center_div{
+			margin: 0 auto;
+			width:80% /* value of your choice which suits your alignment */
+		}
+
+		.irctc {
+			max-width: 80%;
+		}
+		h2 {
+			font-size:20px;
+			font-family:'Open Sans', serif;
+		}
+		h1 {
+			color:#444;
+			font-family:'Mate SC', serif;
+			font-size:45px;
+			text-align:center;
+		}
+		p {
+			font-size: .95em;
+			margin-bottom: 1.8em;
+		}
+
+		.form-control {
+			padding: 4px 6px;
+			height: 30px;
+			border-radius: 3px;
+			font-size: 12px;
+		}
+		.col-lg-1, .col-lg-2 {
+			padding-left: 2px;
+		}
+		.row {
+			margin: 1em;
+		}
+		.row-heading {
+			margin: 1em 0;
+		}
+		input[type="checkbox"] {
+			margin: 6px 0 0 20px;
+		}
+		b, strong {
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #999;
+			font-size: .85em;
+		}
+		hr {
+			margin-top: 5px;
+		}
+
+
+</style>
+    <link href='OpenSans.css' rel='stylesheet' type='text/css'>
+    <link href='MateSC.css' rel='stylesheet' type='text/css'>
+    <link rel="chrome-webstore-item" href="">
+    <!--[if lt IE 9]>
+     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="">
+    
+	<script src="jquery.min.js"></script>
+	<script src="tether.min.js"></script>
+     <script src="bootstrap.min.js"></script>
+	 <script src="analytics.js"></script>
+	 <script src="options.js"></script>
+  </head>
+
+    <body>
+        <div class="container">
+            <h1>IRCTC Tatkal AutoFill</h1>
+
+<div class="container  irctc center_div">
+
+  <form id="railways" name="booktatkal" style="align:center" >
+    <div class="row row-heading">
+      <div class="col-md-3">
+        <h4>PASSENGER DETAILS</h4>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-lg-3">
+        <strong>Passenger<br>Name</strong>
+      </div>
+      <div class="col-lg-1">
+        <strong>Age<br></strong>
+      </div>
+      <div class="col-lg-2">
+        <strong>Gender<br>M/F</strong>
+      </div>
+
+      <div class="col-lg-2">
+        <strong>Choose<br>Berth</strong>
+      </div>
+	  <div class="col-lg-2">
+          <strong>Food<br>Choice</strong>
+      </div>
+      <div class="col-lg-1">
+        <strong>Senior<br>Citizen</strong>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:0:psgnName" placeholder="Passenger #1" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:0:psgnAge" min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:0:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:0:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>
+	  <div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:0:foodChoice" class="form-control" name="addPassengerForm:psdetail:0:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:0:concessionOpt">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:1:psgnName" placeholder="Passenger #2" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:1:psgnAge"  min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:1:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:1:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>
+	<div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:1:foodChoice" class="form-control" name="addPassengerForm:psdetail:1:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:1:concessionOpt">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:2:psgnName" placeholder="Passenger #3" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:2:psgnAge"  min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:2:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:2:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>   
+	 <div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:2:foodChoice" class="form-control" name="addPassengerForm:psdetail:2:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:2:concessionOpt">
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:3:psgnName" placeholder="Passenger #4" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:3:psgnAge"  min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:3:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:3:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>
+	  <div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:3:foodChoice" class="form-control" name="addPassengerForm:psdetail:3:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:3:concessionOpt">
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:4:psgnName" placeholder="Passenger #5" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:4:psgnAge"  min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:4:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:4:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>
+	<div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:4:foodChoice" class="form-control" name="addPassengerForm:psdetail:4:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>      
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:4:concessionOpt">
+      </div>      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="addPassengerForm:psdetail:5:psgnName" placeholder="Passenger #6" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-1">
+        <input type="number" class="form-control col-lg-1" name="addPassengerForm:psdetail:5:psgnAge"  min="5" max="125">
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:5:psgnGender" class="form-control col-lg-1">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:psdetail:5:berthChoice" class="form-control col-lg-2">
+          <option value="  ">No Preference</option>
+          <option value="LB">LOWER</option>
+          <option value="MB">MIDDLE</option>
+          <option value="UB">UPPER</option>
+          <option value="SL">SIDE LOWER</option>
+          <option value="SU">SIDE UPPER</option>
+          <option value="WS">WINDOW SIDE</option>
+        </select>
+      </div>
+	  <div class="col-lg-2">
+        <select id="addPassengerForm:psdetail:5:foodChoice" class="form-control" name="addPassengerForm:psdetail:5:foodChoice">
+          <option value=" ">Select</option>
+          <option value="V">Veg</option>
+          <option value="N">Non-Veg</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <input type="checkbox" name="addPassengerForm:psdetail:5:concessionOpt">
+      </div>
+    </div>
+
+
+    <div class="row row-heading">
+      <div class="col-md-3">
+        <h4>Children Below 5 Years </h4>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <strong>Child's Name</strong>
+      </div>
+      <div class="col-lg-3">
+        <strong>Age</strong>
+      </div>
+      <div class="col-lg-2">
+        <strong>Gender</strong>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-lg-4">
+        <input type="text" class="form-control col-lg-4" name="addPassengerForm:childInfoTable:0:infantName" placeholder="Child Passenger #1" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-3">
+        <select class="form-control col-lg-3" name="addPassengerForm:childInfoTable:0:infantAge">
+          <option value="-1" selected="selected">Select</option>
+          <option value="0">Below one year</option>
+          <option value="1">One year</option>
+          <option value="2">Two years</option>
+          <option value="3">Three years</option>
+          <option value="4">Four years</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:childInfoTable:0:infantGender" class="form-control col-lg-2">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <input type="text" class="form-control col-lg-3" name="addPassengerForm:childInfoTable:1:infantName" placeholder="Child Passenger #2" pattern=".{3,16}" required title="Name should be between 3 and 16 characters" minlength="3" maxlength="16">
+      </div>
+      <div class="col-lg-3">
+        <select class="form-control col-lg-3" name="addPassengerForm:childInfoTable:1:infantAge">
+          <option value="-1" selected="selected">Select</option>
+          <option value="0">Below one year</option>
+          <option value="1">One year</option>
+          <option value="2">Two years</option>
+          <option value="3">Three years</option>
+          <option value="4">Four years</option>
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <select name="addPassengerForm:childInfoTable:1:infantGender" class="form-control col-lg-2">
+          <option value=" ">Select</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+    </div>
+    <hr />
+  
+    <div class="row">
+      <div class="form-group">
+        <label class="col-lg-4 control-label">Mobile Number:</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" maxlength="10" name="addPassengerForm:mobileNo">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        
+        <input type="checkbox" id="addPassengerForm:autoUpgrade" name="addPassengerForm:autoUpgrade">
+        <label class="col-lg4 xcontrol-label"> &nbsp; Consider for auto upgradation</label><br>        
+        <input type="checkbox" id="addPassengerForm:onlyConfirmBerths" name="addPassengerForm:onlyConfirmBerths">
+        <label class="col-lg4 xcontrol-label"> &nbsp; Book only if confirm berths are allotted</label><br>
+       </div>
+    </div>
+    <hr />
+    
+</div>
+</form>
+<div class="row text-center" >
+	<div id="successAlert" class="alert alert-success" style="display:none;">
+	  <strong>Form Save Success!</strong> We will auto fill your tatkal form :)
+	</div>
+
+
+    <button id="save" type="button" class="btn btn-primary" style="margin:10px">Save</a>
+    <button  id="reset" type="button" class="btn btn-default" style="margin:10px">Reset</a>
+
+</div>	
+
+
+<hr />
+
+
+</div>
+
+</div>
+</div>
+            <footer>
+            <div class="text-center social">
+                <small>&copy; 2017 </small>
+            </div>
+            </footer>
+        </div>
+
+		
+        
+
+
+</body>
+</html>

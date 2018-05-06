@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Hotstar Subscription Blocker",
+  "short_name" : "hotstar unblock",
+  "description": "This extension unblocks the hotstar subscription",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png"
+  }, 
+  "options_page": "options.html", 
+  "background": {
+	"scripts": ["background.js"]
+  },
+  
+  "permissions": [
+	"browsingData",
+    "activeTab",
+	"tabs",
+	"http://*.hotstar.com/*",
+	"https://*.hotstar.com/*",
+	"storage"
+  ], 
+  "content_scripts": [
+    {
+      "matches": ["https://www.hotstar.com/*","http://www.hotstar.com/*"],
+      "js":["jquery.min.js","arrive.min.js", "inject.js"],
+	  "run_at":    "document_start"
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'" 
+}
