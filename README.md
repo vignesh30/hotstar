@@ -1,6 +1,12 @@
 #hotstar
 chrome extension to unblock hotstar subscription while watching ipl
 
+Download the extension from chrome webstore - https://chrome.google.com/webstore/detail/hotstar-free-live-unlimit/fkjipkakomckdigalfnfoeebocgcphlh
+
+
+## (OR)
+
+
 ## Getting Started
 
     Download the zip and extract the files
