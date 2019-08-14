@@ -1,18 +1,23 @@
 {
   "manifest_version": 2,
 
-  "name": "Hotstar Subscription Blocker",
+  "name": "Hotstar free live - Free worldcup 2019",
   "short_name" : "hotstar unblock",
-  "description": "This extension unblocks the hotstar subscription",
-  "version": "0.1",
+  "description": "Watch free worldcup 2019 without subscription in hotstar",
+  "version": "1.5",
   "browser_action": {
-    "default_icon": "icon.png"
+  
+        "default_icon": { "16": "icon16.png",
+           "64": "icon64.png",
+          "128": "icon128.png" 
+		  },
+        "default_title": "How to use",      
+        "default_popup": "popup.html"        
   }, 
    "icons": { "16": "icon16.png",
            "64": "icon64.png",
           "128": "icon128.png" },
 		  
-  "options_page": "options.html", 
   "background": {
 	"scripts": ["background.js"]
   },
@@ -23,14 +28,17 @@
 	"tabs",
 	"http://*.hotstar.com/*",
 	"https://*.hotstar.com/*",
-	"storage"
+	"storage",
+	"webRequest", "webRequestBlocking","*://*.akamaihd.net/*", "*://*.akamaized.net/*", "*://*.akamai.com/*", "*://*.hotstar-cdn.net/*",  "http://*.amazon.in/*", "https://*.amazon.in/*", "http://*.flipkart.com/*", "https://*.flipkart.com/*",
+	"cookies"  
   ], 
   "content_scripts": [
     {
       "matches": ["https://www.hotstar.com/*","http://www.hotstar.com/*"],
-      "js":["jquery.min.js","arrive.min.js", "inject.js"],
+      "js":["jquery.min.js","arrive.min.js", "inject.js", "hotstar-free.js"],
 	  "run_at":    "document_start"
     }
   ],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'" 
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'" ,
+  "web_accessible_resources": [ "*.png", "*.html", "*.js"]
 }
