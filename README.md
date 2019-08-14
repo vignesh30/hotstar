@@ -20,6 +20,10 @@ Chrome browser
 * [Arrive](https://github.com/uzairfarooq/arrive) - Mutation listener
 
 #
+
+## Terms
+For developer monitising we have added amazon affliate tag to the urls and get commission in your purchase.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
